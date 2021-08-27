@@ -64,7 +64,13 @@ let yourPizza = new YourPizza("Large","Sausage");
 yourPizza.totalCost();
 Expected Outcome: 14
 
-Test: "It should loop through the toppings array? If multiple toppings can be selected at once? Maybe just have fields for topping1, topping2, topping3?"
+Test: "It should recognize multiple topping selections and loop through the topppings to get all the prices."
+code:
+let yourPizza = new YourPizza("Large");
+yourPizza.toppings.push("Sausage");
+yourPizza.toppings.push("Extra Cheese");
+yourPizza.totalCost();
+Expected Outcome: 15
 ```
 
 

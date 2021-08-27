@@ -1,15 +1,15 @@
-// function YourPizza (urSize, urSauce, urTop, urDip, urSide, urDrink) {
+// function YourPizza (urSize, urSauce, urDip, urSide, urDrink) {
 //   this.size = urSize;
 //   this.sauce = urSauce;
-//   this.toppings = urTop;
+//   this.toppings = [];
 //   this.dipping = urDip;
 //   this.sides = urSide;
 //   this.drinks = urDrink;
 // }
 
-function YourPizza (urSize, urTop, ) {
+function YourPizza (urSize) {
   this.size = urSize;
-  this.toppings = urTop;
+  this.toppings = []
 
 }
 
@@ -66,6 +66,7 @@ const drinks = [
   {drink: "none", price: 0}
 ]
 
+
 YourPizza.prototype.totalCost = function() {
   let cost = 0
   for (let i=0; i<sizes.length; i++) {
@@ -76,9 +77,10 @@ YourPizza.prototype.totalCost = function() {
   }
   for (let i=0; i<toppings.length; i++) {
     const theTopping = toppings[i].topping;
-    if (this.toppings === theTopping){
+    if (this.toppings.includes(theTopping)){
       cost += toppings[i].price;
     }
+    console.log(cost);
   }
-  console.log(cost);
 }
+
