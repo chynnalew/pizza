@@ -1,16 +1,10 @@
-// function YourPizza (urSize, urSauce, urDip, urSide, urDrink) {
-//   this.size = urSize;
-//   this.sauce = urSauce;
-//   this.toppings = [];
-//   this.dipping = urDip;
-//   this.sides = urSide;
-//   this.drinks = urDrink;
-// }
-
-function YourPizza (urSize) {
+function YourPizza (urSize, urSauce, urDip, urSide, urDrink){
   this.size = urSize;
-  this.toppings = []
-
+  this.sauce = urSauce;
+  this.dipping = urDip;
+  this.sides = urSide;
+  this.drinks = urDrink;
+  this.toppings = [];
 }
 
 const sizes = [
@@ -70,9 +64,28 @@ const drinks = [
 YourPizza.prototype.totalCost = function() {
   let cost = 0
   for (let i=0; i<sizes.length; i++) {
-    const theSize = sizes[i].size;
-    if (this.size === theSize){
+    if (this.size === sizes[i].size){
       cost += sizes[i].price;
+    }
+  }
+  for (let i=0; i<sauces.length; i++) {
+    if (this.sauce === sauces[i].sauce){
+      cost += sauces[i].price;
+    }
+  }
+  for (let i=0; i<dippings.length; i++) {
+    if (this.dipping === dippings[i].dipping){
+      cost += dippings[i].price;
+    }
+  }
+  for (let i=0; i<sides.length; i++) {
+    if (this.side === sides[i].side){
+      cost += sides[i].price;
+    }
+  }
+  for (let i=0; i<drinks.length; i++) {
+    if (this.drink === drinks[i].drink){
+      cost += drinks[i].price;
     }
   }
   for (let i=0; i<toppings.length; i++) {
@@ -80,7 +93,8 @@ YourPizza.prototype.totalCost = function() {
     if (this.toppings.includes(theTopping)){
       cost += toppings[i].price;
     }
-    console.log(cost);
   }
+  return cost;
 }
+
 

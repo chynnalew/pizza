@@ -72,6 +72,9 @@ yourPizza.toppings.push("Extra Cheese");
 yourPizza.totalCost();
 Expected Outcome: 15
 ```
+```
+"Add additional option objects and functionality to add prices together"
+```
 
 
 
