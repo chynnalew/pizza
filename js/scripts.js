@@ -67,10 +67,18 @@ const drinks = [
 ]
 
 YourPizza.prototype.totalCost = function() {
+  let cost = 0
   for (let i=0; i<sizes.length; i++) {
     const theSize = sizes[i].size;
     if (this.size === theSize){
-      console.log("true");
+      cost += sizes[i].price;
     }
   }
+  for (let i=0; i<toppings.length; i++) {
+    const theTopping = toppings[i].topping;
+    if (this.toppings === theTopping){
+      cost += toppings[i].price;
+    }
+  }
+  console.log(cost);
 }
