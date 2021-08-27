@@ -1,24 +1,66 @@
 body {
-  background-color: orange;
+  background-color: rgb(255, 115, 0);
+  text-align: center;
 }
 
-button {
-  margin-bottom: 20px;
+#landingPizza {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  margin: 15px;
+  border-radius: 10px;
 }
 
-#yourOrder, #pizza{
+.content {
+  background-image: url(../img/coals.jpeg);
+  background-repeat: none;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-left: 5%;
+  margin-right: 5%;
+  min-height: 100%;
+  width: 90%;
+  padding: 5%;
+  padding-top: 0%;
+  display: inline-block;
+  text-align: center;
+}
+.button {
+  display: inline-block;
+  height:60px;
+  width: 400px;
+  padding: 10px;
+  border: rgb(253, 152, 20) 4px solid;
+  border-radius: 10px;
+  font-weight:500;
+  font-size: large;
+  color: rgb(19, 150, 95);
+  background-color: rgb(255, 255, 255);
+}
+
+#about {
+  color: rgba(255, 255, 255, 0.904);
+  font-family: monospace Monaco;
+  padding: 20px;
+  width: 60%;
+  display:inline-block;
+}
+
+#yourOrder, #pizza {
   display: none; 
 }
 
 .jumbotron {
   text-align: center;
-  background-color: white;
-  border-bottom: rgb(19, 150, 95) 10px solid;
+  background-color: rgba(255, 255, 255, 0);
+  border-bottom: rgba(19, 150, 95, 0.911) 10px solid;
   width: 100%;
+  font-family: Brush Script MT;
 }
 .jumbotron h1 {
-  font-family: Brush Script MT;
-  font-size: 5em;
+  font-size: 60pt;
+  color: white;
+  text-shadow: 10px 10px 10px rgb(19, 150, 95);
 }
 
 .card {

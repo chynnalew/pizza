@@ -8,14 +8,22 @@
   <title>Slice of Life</title>
 </head>
 <body>
-  <div class = "container">
+  <div class = "content">
     <div class= "jumbotron">
       <h1>Welcome to Slice of Life Pizza!</h1>
     </div>
-    <button type="button" class="form-control" id="startOrder">Click here to Start Your Order!</button>
+    <div id="about">
+      <p>Slice of Life Pizza is the passion project of someone pretty cool and probably another person!</p>
+      <p>We believe quality counts. All of our make believe ingredients come from the finest corners of your imagination. It's the only way to guarantee maximum freshness!</p>
+      <p>We know that pizza matters to you. It matters to us too! We strive for 100% customer satisfaction.</p>
+      <p>We stand by our motto <em>Slice of Life Pizza: They can't be dissatisfied with a pizza they don't have!</em></p>
+    </div>
+    <br>
+    <button type="button" class="form-control button" id="startOrder">Click here to Start Your Order!</button>
+    <img id="landingPizza" src="img/pizza.jpeg" alt="a picture of pizza">
     <form action="submit" id="pizza">
       <div class="card">
-        <label for="size">Pick Your Size:</label>
+        <p>Pick Your Size:</p>
         <select class="form-control" id="size" name="size">
           <option value="Small">Small $5</option>
           <option value="Medium">Medium $8</option>
@@ -24,7 +32,7 @@
         </select>
       </div>
       <div class="card">
-        <label for="sauce">Pick Your Sauce:</label>
+        <p>Pick Your Sauce:</p>
         <select class="form-control" id="sauce" name="sauce">
           <option value="Classic Red">Classic Red (included in price)</option>
           <option value="Garlic Alfredo">Garlic Alfredo (upgrade for $2)</option>
@@ -36,45 +44,42 @@
           <p>Pick Your Toppings:</p>
           <p>Meat toppings: $2 each
             <br>All other toppings: $1 each</p>
-          <div class="row">
-            <div class="col-4">
-              <label for="Pepperoni">Pepperoni</label>
-              <input type="checkbox" name="toppings"  value="Pepperoni">
-              <br>
-              <label for="Sausage">Sausage</label>
-              <input type="checkbox" name="toppings"  value="Sausage">
-              <br>
-              <label for="Canadian Bacon">Canadian Bacon</label>
-              <input type="checkbox" name="toppings"  value="Canadian Bacon">
-              <br>
-              <label for="Anchovies">Anchovies</label>
-              <input type="checkbox" name="toppings" value="Anchovies">
-              <br>
-              <label for="Grilled Chicken">Grilled Chicken</label>
-              <input type="checkbox" name="toppings"  value="Grilled Chicken">
-            </div>
-            <div class="col-4">
-              <label for="Mushrooms">Mushrooms</label>
-              <input type="checkbox" name="toppings"  value="Mushrooms">
-              <br>
-              <label for="Onion">Onion</label>
-              <input type="checkbox" name="toppings"  value="Onion">
-              <br>
-              <label for="Black Olives">Black Olives</label>
-              <input type="checkbox" name="toppings"  value="Black Olives">
-              <br>
-              <label for="Green Pepper">Green Pepper</label>
-              <input type="checkbox" name="toppings"  value="Green Pepper">
-              <br>
-              <label for="Artichoke Hearts">Artichoke Hearts</label>
-              <input type="checkbox" name="toppings"  value="Artichoke Hearts">
-              <br>
-              <label for="Pineapple">Pineapple</label>
-              <input type="checkbox" name="toppings"  value="Pineapple">
-              <br>
-              <label for="Extra Cheese">Extra Cheese</label>
-              <input type="checkbox" name="toppings"  value="Extra Cheese">
-            </div>
+          <div class="card">
+            <label for="Pepperoni">Pepperoni</label>
+            <input type="checkbox" name="toppings"  value="Pepperoni">
+            <br>
+            <label for="Sausage">Sausage</label>
+            <input type="checkbox" name="toppings"  value="Sausage">
+            <br>
+            <label for="Canadian Bacon">Canadian Bacon</label>
+            <input type="checkbox" name="toppings"  value="Canadian Bacon">
+            <br>
+            <label for="Anchovies">Anchovies</label>
+            <input type="checkbox" name="toppings" value="Anchovies">
+            <br>
+            <label for="Grilled Chicken">Grilled Chicken</label>
+            <input type="checkbox" name="toppings"  value="Grilled Chicken">
+            <br>
+            <label for="Mushrooms">Mushrooms</label>
+            <input type="checkbox" name="toppings"  value="Mushrooms">
+            <br>
+            <label for="Onion">Onion</label>
+            <input type="checkbox" name="toppings"  value="Onion">
+            <br>
+            <label for="Black Olives">Black Olives</label>
+            <input type="checkbox" name="toppings"  value="Black Olives">
+            <br>
+            <label for="Green Pepper">Green Pepper</label>
+            <input type="checkbox" name="toppings"  value="Green Pepper">
+            <br>
+            <label for="Artichoke Hearts">Artichoke Hearts</label>
+            <input type="checkbox" name="toppings"  value="Artichoke Hearts">
+            <br>
+            <label for="Pineapple">Pineapple</label>
+            <input type="checkbox" name="toppings"  value="Pineapple">
+            <br>
+            <label for="Extra Cheese">Extra Cheese</label>
+            <input type="checkbox" name="toppings"  value="Extra Cheese">
           </div>
         </div>
       </div>
@@ -114,7 +119,7 @@
           <option value="Blue Cheese">Blue Cheese $1</option>
         </select>
       </div>
-      <button type="submit" class="form-control" id="orderNow">Order Now</button>
+      <button type="submit" class="form-control button" id="orderNow">Order Now</button>
     </form>
     <div class="card" id="yourOrder">
       <h1>Your Order:</h1>
@@ -125,7 +130,7 @@
       <p id="yourDrink">Drinks: </p>
       <p id="yourDip">Dipping Sauce: </p>
       <h2 id="totalCost">Total Cost: $</h2>
-      <button onclick="window.location.reload();">Order again!</button>
+      <button class="button form-control" onclick="window.location.reload();">Order again!</button>
     </div>
   </div>
 </body>

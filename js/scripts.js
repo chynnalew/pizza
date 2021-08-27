@@ -93,7 +93,7 @@ YourPizza.prototype.totalCost = function() {
 $(document).ready(function() {
   $("#startOrder").on("click", function(event) {
     event.preventDefault();
-    $("#startOrder").fadeOut("fast");
+    $("#startOrder, #landingPizza, #about").fadeOut("fast");
     $("#pizza").fadeIn(2500);
   })
 
