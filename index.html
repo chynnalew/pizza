@@ -11,7 +11,7 @@
   <div class = "container">
     <h1>Welcome to Slice of Life Pizza!</h1>
     <p>Make your selections below to order!</p>
-    <form action="submit">
+    <form action="submit" id="pizza">
       <div class="card">
         <label for="size">Pick Your Size:</label>
         <select class="form-control" id="size" name="size">
@@ -79,30 +79,30 @@
         <div class="col-4">
           <p>Choose Your Sides</p>
           <label for="Cesar Salad">Cesar Salad $3</label>
-          <input type="checkbox" name="side" value="Cesar Salad">
+          <input type="checkbox" class="side" value="Cesar Salad">
           <br>
           <label for="Garlic Bread">Garlic Bread $3</label>
-          <input type="checkbox" name="side" value="Garlic Bread">
+          <input type="checkbox" class="side" value="Garlic Bread">
           <br>
           <label for="6 Hot Wings">Six Hot Wings $5</label>
-          <input type="checkbox" name="side" value="6 Hot Wings">
+          <input type="checkbox" class="side" value="6 Hot Wings">
           <br>
           <label for="none">No Sides</label>
-          <input type="checkbox" name="side" value="none">
+          <input type="checkbox" class="side" value="none">
         </div>
         <div class="col-4">
           <p>Choose Your Drinks: $2 each</p>
           <label for="Cola">Cola</label>
-          <input type="checkbox" name="drink" value="Cola">
+          <input type="checkbox" class="drink" value="Cola">
           <br>
           <label for="Lemon Lime Soda">Lemon Lime Soda</label>
-          <input type="checkbox" name="drink" value="Lemon Lime Soda">
+          <input type="checkbox" class="drink" value="Lemon Lime Soda">
           <br>
           <label for="Orange Soda">Orange Soda</label>
-          <input type="checkbox" name="drink" value="Orange Soda">
+          <input type="checkbox" class="drink" value="Orange Soda">
           <br>
           <label for="none">No Drinks</label>
-          <input type="checkbox" name="drink" value="none">
+          <input type="checkbox" class="drink" value="none">
         </div>
       </div>
       <label for="sauce">Pick A Dipping Sauce:</label>
@@ -113,7 +113,18 @@
         <option value="Blue Cheese">Blue Cheese $1</option>
         <option value="none">No Dipping Sauce</option>
       </select>
+      <button type="submit" id="orderNow">Order Now</button>
     </form>
+    <div class="card" id="yourOrder">
+      <h1>Your Order:</h1>
+      <p id="yourSize">Size: </p>
+      <p id="yourSauce">Sauce: </p>
+      <p id="yourToppings">Toppings: </p>
+      <p id="yourSide">Sides: </p>
+      <p id="yourDrink">Drinks: </p>
+      <p id="yourDip">Dipping Sauce: </p>
+      <h2 id="totalCost">Total Cost: </h2>
+    </div>
   </div>
 </body>
 </html>

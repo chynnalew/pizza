@@ -1,9 +1,9 @@
-function YourPizza (urSize, urSauce, urDip, urSide, urDrink){
+function YourPizza (urSize, urSauce, urDip){
   this.size = urSize;
   this.sauce = urSauce;
   this.dipping = urDip;
-  this.sides = urSide;
-  this.drinks = urDrink;
+  this.sides = [];
+  this.drinks = [];
   this.toppings = [];
 }
 
@@ -55,8 +55,6 @@ const drinks = [
   {drink: "Cola", price: 2},
   {drink: "Lemon Lime Soda", price: 2},
   {drink: "Orange Soda", price: 2},
-  {drink: "Root Beer", price: 2},
-  {drink: "Sparkling Water", price: 2},
   {drink: "none", price: 0}
 ]
 
@@ -79,22 +77,43 @@ YourPizza.prototype.totalCost = function() {
     }
   }
   for (let i=0; i<sides.length; i++) {
-    if (this.side === sides[i].side){
+    if (this.side.includes(sides[i].side)){
       cost += sides[i].price;
     }
   }
   for (let i=0; i<drinks.length; i++) {
-    if (this.drink === drinks[i].drink){
+    if (this.drink.includes(drinks[i].drink)){
       cost += drinks[i].price;
     }
   }
   for (let i=0; i<toppings.length; i++) {
-    const theTopping = toppings[i].topping;
-    if (this.toppings.includes(theTopping)){
+    if (this.toppings.includes(toppings[i].topping)){
       cost += toppings[i].price;
     }
   }
   return cost;
 }
 
-
+$(document).ready(function() {
+  $("#orderNow").submit(function(event){
+    event.preventDefault();
+    let yourPizza = new YourPizza(yourSize, yourSauce, yourDip);
+    let yourCost = yourPizza.totalCost();
+    const yourSize = $("select#size").val();
+    const yourSauce= $("select#sauce").val();
+    const yourDip = $("select#dip").val();
+    const yourSide = $(".side:checked").val();
+    const yourDrink = $(".drink:checked").val();
+    const yourTopping = $(".topping:checked").val();
+    yourPizza.sides.push(yourSide);
+    yourPizza.drinks.push(yourDrink);
+    yourPizza.toppings.push(yourTopping);
+    $("#yourSize").append(yourPizza.size);
+    $("#yourSauce").append(yourPizza.sauce);
+    $("#yourToppings").append(yourPizza.toppings);
+    $("#yourSide").append(yourPizza.sides);
+    $("#yourDrink").append(yourPizza.drinks);
+    $("#yourDip").append(yourPizza.dipping);
+    $("#totalCost").append(yourCost);
+  })
+})
