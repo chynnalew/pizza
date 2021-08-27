@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Slice of Life</title>
+</head>
+<body>
+  <div class = "container">
+    <h1>Welcome to Slice of Life Pizza!</h1>
+    <p>Make your selections below to order!</p>
+    <form action="submit">
+      <div class="card">
+        <label for="size">Pick Your Size:</label>
+        <select class="form-control" id="size" name="size">
+          <option value="Small">Small $5</option>
+          <option value="Medium">Medium $8</option>
+          <option value="Large">Large $12</option>
+          <option value="X-large">X-Large $15</option>
+        </select>
+        <label for="sauce">Pick Your Size:</label>
+        <select class="form-control" id="sauce" name="sauce">
+          <option value="Classic Red">Classic Red (included in price)</option>
+          <option value="Garlic Alfredo">Garlic Alfredo (upgrade for $2)</option>
+          <option value="Pesto">Pesto (upgrade for $2)</option>
+        </select>
+        <div id="toppings">
+          <p>Pick Your Toppings:</p>
+          <p>Meat toppings: $2 each</p>
+          <p>All other toppings: $1 each</p>
+          <div class="row">
+            <div class="col-4">
+              <label for="none">None</label>
+              <input type="checkbox" name="toppings" value="none">
+              <br>
+              <label for="Pepperoni">Pepperoni</label>
+              <input type="checkbox" name="toppings"  value="Pepperoni">
+              <br>
+              <label for="Sausage">Sausage</label>
+              <input type="checkbox" name="toppings"  value="Sausage">
+              <br>
+              <label for="Canadian Bacon">Canadian Bacon</label>
+              <input type="checkbox" name="toppings"  value="Canadian Bacon">
+              <br>
+              <label for="Anchovies">Anchovies</label>
+              <input type="checkbox" name="toppings" value="Anchovies">
+              <br>
+              <label for="Grilled Chicken">Grilled Chicken</label>
+              <input type="checkbox" name="toppings"  value="Grilled Chicken">
+            </div>
+            <div class="col-4">
+              <label for="Mushrooms">Mushrooms</label>
+              <input type="checkbox" name="toppings"  value="Mushrooms">
+              <br>
+              <label for="Onion">Onion</label>
+              <input type="checkbox" name="toppings"  value="Onion">
+              <br>
+              <label for="Black Olives">Black Olives</label>
+              <input type="checkbox" name="toppings"  value="Black Olives">
+              <br>
+              <label for="Green Pepper">Green Pepper</label>
+              <input type="checkbox" name="toppings"  value="Green Pepper">
+              <br>
+              <label for="Artichoke Hearts">Artichoke Hearts</label>
+              <input type="checkbox" name="toppings"  value="Artichoke Hearts">
+              <br>
+              <label for="Pineapple">Pineapple</label>
+              <input type="checkbox" name="toppings"  value="Pineapple">
+              <br>
+              <label for="Extra Cheese">Extra Cheese</label>
+              <input type="checkbox" name="toppings"  value="Extra Cheese">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p>Choose Your Sides</p>
+          <label for="Cesar Salad">Cesar Salad $3</label>
+          <input type="checkbox" name="side" value="Cesar Salad">
+          <br>
+          <label for="Garlic Bread">Garlic Bread $3</label>
+          <input type="checkbox" name="side" value="Garlic Bread">
+          <br>
+          <label for="6 Hot Wings">Six Hot Wings $5</label>
+          <input type="checkbox" name="side" value="6 Hot Wings">
+          <br>
+          <label for="none">No Sides</label>
+          <input type="checkbox" name="side" value="none">
+        </div>
+        <div class="col-4">
+          <p>Choose Your Drinks: $2 each</p>
+          <label for="Cola">Cola</label>
+          <input type="checkbox" name="drink" value="Cola">
+          <br>
+          <label for="Lemon Lime Soda">Lemon Lime Soda</label>
+          <input type="checkbox" name="drink" value="Lemon Lime Soda">
+          <br>
+          <label for="Orange Soda">Orange Soda</label>
+          <input type="checkbox" name="drink" value="Orange Soda">
+          <br>
+          <label for="none">No Drinks</label>
+          <input type="checkbox" name="drink" value="none">
+        </div>
+      </div>
+      <label for="sauce">Pick A Dipping Sauce:</label>
+      <select class="form-control" id="dip" name="dip">
+        <option value="Ranch">Ranch $1</option>
+        <option value="Garlic Butter">Garlic Butter $1 </option>
+        <option value="Marinara">Marinara $1</option>
+        <option value="Blue Cheese">Blue Cheese $1</option>
+        <option value="none">No Dipping Sauce</option>
+      </select>
+    </form>
+  </div>
+</body>
+</html>
