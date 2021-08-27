@@ -27,7 +27,7 @@ This application was created as an independent project at Epicodus so showcase p
 
 ## Known Bugs
 
-*  No bugs known at this time
+*  The checkbox values are pushing to arrays, but are failing to add to the total, even though the function worked during testing.
 
 ## License
 

@@ -73,8 +73,8 @@ YourPizza.prototype.totalCost = function() {
     }
   }
   for (let i=0; i<sides.length; i++) {
-    if (this.sides.includes(sides[i].side)){
-      cost += sides[i].price;
+    if (this.sides.includes(sides[i].side)) {
+      cost = cost + sides[i].price;
     }
   }
   for (let i=0; i<drinks.length; i++) {
@@ -102,14 +102,26 @@ $(document).ready(function() {
     const yourSize = $("select#size").val();
     const yourSauce= $("select#sauce").val();
     const yourDip = $("select#dip").val();
-    const yourSide = $("input:checkbox[name=side]:checked").val();
-    const yourDrink = $("input:checkbox[name=drink]:checked").val();
-    const yourTopping = $("input:checkbox[name=topping]:checked").val();
+    const yourSide = [];
+    const yourDrink = [];
+    const yourTopping = [];
+
+    $("input:checkbox[name=toppings]:checked").each(function() {
+      yourTopping.push($(this).val());
+    });
+    $("input:checkbox[name=drink]:checked").each(function() {
+      yourDrink.push($(this).val());
+    });
+    $("input:checkbox[name=side]:checked").each(function() {
+      yourSide.push($(this).val());
+    });
+
     let yourPizza = new YourPizza(yourSize, yourSauce, yourDip);
     yourPizza.sides.push(yourSide);
     yourPizza.drinks.push(yourDrink);
     yourPizza.toppings.push(yourTopping);
     let yourCost = yourPizza.totalCost();
+
     $("#yourSize").append(yourPizza.size);
     $("#yourSauce").append(yourPizza.sauce);
     $("#yourToppings").append(yourPizza.toppings);

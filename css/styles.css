@@ -32,10 +32,12 @@ body {
   padding: 10px;
   border: rgb(253, 152, 20) 4px solid;
   border-radius: 10px;
+  margin-bottom: 20px;
   font-weight:500;
   font-size: large;
-  color: rgb(19, 150, 95);
-  background-color: rgb(255, 255, 255);
+  color: white;
+  box-shadow: rgb(19, 150, 95) 5px 5px 20px;
+  background-color: rgba(255, 255, 255, 0.432);
 }
 
 #about {
@@ -53,7 +55,7 @@ body {
 .jumbotron {
   text-align: center;
   background-color: rgba(255, 255, 255, 0);
-  border-bottom: rgba(19, 150, 95, 0.911) 10px solid;
+  border-bottom: rgb(230, 139, 22) 7px solid;
   width: 100%;
   font-family: Brush Script MT;
 }
@@ -66,5 +68,12 @@ body {
 .card {
   padding: 15px;
   margin: 20px;
-  border:rgb(19, 150, 95) 5px dashed;
+  border:rgb(19, 150, 95) 3px solid;
+  box-shadow:orange 5px 2px 20px;
+  background-color:rgba(255, 239, 213, 0.062);
+  color: white;
+}
+
+#pizza p {
+  font-size: x-large;
 }
