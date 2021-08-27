@@ -1,3 +1,42 @@
+# Pizza Parlor
+
+#### An Epicodus independent project that allows a user to make selections to build their pizza, then returns the final price.
+
+#### By: Chynna Lew
+
+## Technologies Used
+
+* HTML
+* CSS / Bootstrap
+* JavaScript / JQuery
+
+## Description
+
+This project was created using Test Driven Development. The plain text tests can be found in the test section of this document.
+This application allows the user to make multiple selections using radio buttons to create their own pizza. When the user clicks the Order Now! button, the total cost of the custom pizza will display.
+This application was created as an independent project at Epicodus so showcase proper use of JavaScript Objects, Constructors, and Prototypes.
+
+## Setup/Installation Requirements
+
+* Go to the [project repository](https://github.com/chynnalew/pizza)
+* Download the files or Clone the repository to your local machine.
+* Open the pizza folder on your local machine.
+* Open index.html in your local browser.
+* Make selections using the radio buttons and click Order Now! to see the total price.
+* Click the order again button to make new selections.
+
+## Known Bugs
+
+*  No bugs known at this time
+
+## License
+
+ [MIT](https://opensource.org/licenses/MIT) 2021
+ 
+## Contact Information
+
+ Chynna Lew <chynnalew@yahoo.com>
+
 ## TESTS
 ```
 "Make a YourPizza constructor that can create yourPizza object."
@@ -36,6 +75,7 @@ yourPizza.getCost();
 Expected Outcome: 14
 
 Test: "It should loop through the toppings array? If multiple toppings can be selected at once? Maybe just have fields for topping1, topping2, topping3?"
+```
 
 
 
