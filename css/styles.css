@@ -1,0 +1,28 @@
+body {
+  background-color: orange;
+}
+
+button {
+  margin-bottom: 20px;
+}
+
+#yourOrder, #pizza{
+  display: none; 
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: white;
+  border-bottom: rgb(19, 150, 95) 10px solid;
+  width: 100%;
+}
+.jumbotron h1 {
+  font-family: Brush Script MT;
+  font-size: 5em;
+}
+
+.card {
+  padding: 15px;
+  margin: 20px;
+  border:rgb(19, 150, 95) 5px dashed;
+}

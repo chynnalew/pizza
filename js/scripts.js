@@ -32,30 +32,26 @@ const toppings = [
   {topping: "Green Pepper", price: 1},
   {topping: "Artichoke Hearts", price: 1},
   {topping: "Pineapple", price: 1},
-  {topping: "Extra Cheese", price: 1},
-  {topping: "none", price: 0}
+  {topping: "Extra Cheese", price: 1}
 ]
 
 const dippings = [
   {dipping: "Ranch", price: 1},
   {dipping: "Garlic Butter", price: 1},
   {dipping: "Marinara", price: 1},
-  {dipping: "Blue Cheese", price: 1},
-  {dipping: "none", price: 0}
+  {dipping: "Blue Cheese", price: 1}
 ]
 
 const sides = [
   {side: "Cesar Salad", price: 3},
   {side: "Garlic Bread", price: 3},
-  {side: "6 Hot Wings", price: 5},
-  {side: "none", price:0}
+  {side: "6 Hot Wings", price: 5}
 ]
 
 const drinks = [
   {drink: "Cola", price: 2},
   {drink: "Lemon Lime Soda", price: 2},
-  {drink: "Orange Soda", price: 2},
-  {drink: "none", price: 0}
+  {drink: "Orange Soda", price: 2}
 ]
 
 
@@ -77,12 +73,12 @@ YourPizza.prototype.totalCost = function() {
     }
   }
   for (let i=0; i<sides.length; i++) {
-    if (this.side.includes(sides[i].side)){
+    if (this.sides.includes(sides[i].side)){
       cost += sides[i].price;
     }
   }
   for (let i=0; i<drinks.length; i++) {
-    if (this.drink.includes(drinks[i].drink)){
+    if (this.drinks.includes(drinks[i].drink)){
       cost += drinks[i].price;
     }
   }
@@ -95,19 +91,25 @@ YourPizza.prototype.totalCost = function() {
 }
 
 $(document).ready(function() {
-  $("").submit(function(event){
+  $("#startOrder").on("click", function(event) {
     event.preventDefault();
-    let yourPizza = new YourPizza(yourSize, yourSauce, yourDip);
-    let yourCost = yourPizza.totalCost();
+    $("#startOrder").fadeOut("fast");
+    $("#pizza").fadeIn(2500);
+  })
+
+  $("#pizza").submit(function(event){
+    event.preventDefault();
     const yourSize = $("select#size").val();
     const yourSauce= $("select#sauce").val();
     const yourDip = $("select#dip").val();
-    const yourSide = $(".side:checked").val();
-    const yourDrink = $(".drink:checked").val();
+    const yourSide = $("input:checkbox[name=side]:checked").val();
+    const yourDrink = $("input:checkbox[name=drink]:checked").val();
     const yourTopping = $("input:checkbox[name=topping]:checked").val();
+    let yourPizza = new YourPizza(yourSize, yourSauce, yourDip);
     yourPizza.sides.push(yourSide);
     yourPizza.drinks.push(yourDrink);
     yourPizza.toppings.push(yourTopping);
+    let yourCost = yourPizza.totalCost();
     $("#yourSize").append(yourPizza.size);
     $("#yourSauce").append(yourPizza.sauce);
     $("#yourToppings").append(yourPizza.toppings);
@@ -115,5 +117,8 @@ $(document).ready(function() {
     $("#yourDrink").append(yourPizza.drinks);
     $("#yourDip").append(yourPizza.dipping);
     $("#totalCost").append(yourCost);
+
+    $("#pizza, .jumbotron").fadeOut("fast");
+    $("#yourOrder").fadeIn(2500);
   })
 })

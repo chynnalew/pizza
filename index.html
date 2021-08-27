@@ -9,8 +9,10 @@
 </head>
 <body>
   <div class = "container">
-    <h1>Welcome to Slice of Life Pizza!</h1>
-    <p>Make your selections below to order!</p>
+    <div class= "jumbotron">
+      <h1>Welcome to Slice of Life Pizza!</h1>
+    </div>
+    <button type="button" class="form-control" id="startOrder">Click here to Start Your Order!</button>
     <form action="submit" id="pizza">
       <div class="card">
         <label for="size">Pick Your Size:</label>
@@ -20,21 +22,22 @@
           <option value="Large">Large $12</option>
           <option value="X-large">X-Large $15</option>
         </select>
-        <label for="sauce">Pick Your Size:</label>
+      </div>
+      <div class="card">
+        <label for="sauce">Pick Your Sauce:</label>
         <select class="form-control" id="sauce" name="sauce">
           <option value="Classic Red">Classic Red (included in price)</option>
           <option value="Garlic Alfredo">Garlic Alfredo (upgrade for $2)</option>
           <option value="Pesto">Pesto (upgrade for $2)</option>
         </select>
+      </div>
+      <div class="card">
         <div id="toppings">
           <p>Pick Your Toppings:</p>
-          <p>Meat toppings: $2 each</p>
-          <p>All other toppings: $1 each</p>
+          <p>Meat toppings: $2 each
+            <br>All other toppings: $1 each</p>
           <div class="row">
             <div class="col-4">
-              <label for="none">None</label>
-              <input type="checkbox" name="toppings" value="none">
-              <br>
               <label for="Pepperoni">Pepperoni</label>
               <input type="checkbox" name="toppings"  value="Pepperoni">
               <br>
@@ -75,45 +78,43 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-4">
-          <p>Choose Your Sides</p>
-          <label for="Cesar Salad">Cesar Salad $3</label>
-          <input type="checkbox" class="side" value="Cesar Salad">
-          <br>
-          <label for="Garlic Bread">Garlic Bread $3</label>
-          <input type="checkbox" class="side" value="Garlic Bread">
-          <br>
-          <label for="6 Hot Wings">Six Hot Wings $5</label>
-          <input type="checkbox" class="side" value="6 Hot Wings">
-          <br>
-          <label for="none">No Sides</label>
-          <input type="checkbox" class="side" value="none">
-        </div>
-        <div class="col-4">
-          <p>Choose Your Drinks: $2 each</p>
-          <label for="Cola">Cola</label>
-          <input type="checkbox" class="drink" value="Cola">
-          <br>
-          <label for="Lemon Lime Soda">Lemon Lime Soda</label>
-          <input type="checkbox" class="drink" value="Lemon Lime Soda">
-          <br>
-          <label for="Orange Soda">Orange Soda</label>
-          <input type="checkbox" class="drink" value="Orange Soda">
-          <br>
-          <label for="none">No Drinks</label>
-          <input type="checkbox" class="drink" value="none">
+      <div class="card">
+        <div class="row">
+          <div class="col-6">
+            <p>Choose Your Sides</p>
+            <label for="Cesar Salad">Cesar Salad $3</label>
+            <input type="checkbox" name="side" value="Cesar Salad">
+            <br>
+            <label for="Garlic Bread">Garlic Bread $3</label>
+            <input type="checkbox" name="side" value="Garlic Bread">
+            <br>
+            <label for="6 Hot Wings">Six Hot Wings $5</label>
+            <input type="checkbox" name="side" value="6 Hot Wings">
+          </div>
+          <div class="col-6">
+            <p>Choose Your Drinks: $2 each</p>
+            <label for="Cola">Cola</label>
+            <input type="checkbox" name="drink" value="Cola">
+            <br>
+            <label for="Lemon Lime Soda">Lemon Lime Soda</label>
+            <input type="checkbox" name="drink" value="Lemon Lime Soda">
+            <br>
+            <label for="Orange Soda">Orange Soda</label>
+            <input type="checkbox" name="drink" value="Orange Soda">
+          </div>
         </div>
       </div>
-      <label for="sauce">Pick A Dipping Sauce:</label>
-      <select class="form-control" id="dip" name="dip">
-        <option value="Ranch">Ranch $1</option>
-        <option value="Garlic Butter">Garlic Butter $1 </option>
-        <option value="Marinara">Marinara $1</option>
-        <option value="Blue Cheese">Blue Cheese $1</option>
-        <option value="none">No Dipping Sauce</option>
-      </select>
-      <button type="submit" id="orderNow">Order Now</button>
+      <div class="card">
+        <label for="sauce">Pick A Dipping Sauce:</label>
+        <select class="form-control" id="dip" name="dip">
+          <option value="none">No Dipping Sauce</option>
+          <option value="Ranch">Ranch $1</option>
+          <option value="Garlic Butter">Garlic Butter $1 </option>
+          <option value="Marinara">Marinara $1</option>
+          <option value="Blue Cheese">Blue Cheese $1</option>
+        </select>
+      </div>
+      <button type="submit" class="form-control" id="orderNow">Order Now</button>
     </form>
     <div class="card" id="yourOrder">
       <h1>Your Order:</h1>
@@ -123,7 +124,8 @@
       <p id="yourSide">Sides: </p>
       <p id="yourDrink">Drinks: </p>
       <p id="yourDip">Dipping Sauce: </p>
-      <h2 id="totalCost">Total Cost: </h2>
+      <h2 id="totalCost">Total Cost: $</h2>
+      <button onclick="window.location.reload();">Order again!</button>
     </div>
   </div>
 </body>
