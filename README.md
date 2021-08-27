@@ -48,30 +48,20 @@ Test: "It should take the user inputs and create a new YourPizza"
 
 Test: "It should compare the properties in yourPizza to the names in pizzaSize"
 Code:
-yourPizza {
-  size: large;
-  topping: sausage;
-}
-yourPizza.getCost();
+let yourPizza = new YourPizza("Large","Sausage");
+yourPizza.totalCost();
 Expected Outcome: true
 
 Test: "It should compare the properties in yourPizza to the names in pizzaToppings"
 Code:
-yourPizza {
-  size: large;
-  topping: sausage;
-}
-yourPizza.getCost();
+let yourPizza = new YourPizza("Large","Sausage");
+yourPizza.totalCost();
 Expected Outcome: true
 
 Test: "It should add the price property of each selected size and topping to a base cost variable"
 Code:
-let cost = 0
-yourPizza {
-  size: large;
-  topping: sausage;
-}
-yourPizza.getCost();
+let yourPizza = new YourPizza("Large","Sausage");
+yourPizza.totalCost();
 Expected Outcome: 14
 
 Test: "It should loop through the toppings array? If multiple toppings can be selected at once? Maybe just have fields for topping1, topping2, topping3?"

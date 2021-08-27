@@ -1,10 +1,16 @@
-function YourPizza (urSize, urSauce, urTop, urDip, urSide, urDrink) {
+// function YourPizza (urSize, urSauce, urTop, urDip, urSide, urDrink) {
+//   this.size = urSize;
+//   this.sauce = urSauce;
+//   this.toppings = urTop;
+//   this.dipping = urDip;
+//   this.sides = urSide;
+//   this.drinks = urDrink;
+// }
+
+function YourPizza (urSize, urTop, ) {
   this.size = urSize;
-  this.sauce = urSauce;
   this.toppings = urTop;
-  this.dipping = urDip;
-  this.sides = urSide;
-  this.drinks = urDrink;
+
 }
 
 const sizes = [
@@ -33,7 +39,7 @@ const toppings = [
   {topping: "Artichoke Hearts", price: 1},
   {topping: "Pineapple", price: 1},
   {topping: "Extra Cheese", price: 1},
-  {topping: "none", price: 0},
+  {topping: "none", price: 0}
 ]
 
 const dippings = [
@@ -41,7 +47,7 @@ const dippings = [
   {dipping: "Garlic Butter", price: 1},
   {dipping: "Marinara", price: 1},
   {dipping: "Blue Cheese", price: 1},
-  {dipping: "none", price: 0},
+  {dipping: "none", price: 0}
 ]
 
 const sides = [
@@ -56,6 +62,15 @@ const drinks = [
   {drink: "Lemon Lime Soda", price: 2},
   {drink: "Orange Soda", price: 2},
   {drink: "Root Beer", price: 2},
-  {drink: "Sparkling Water", price: 2}
-  {drink: "none", price: 0},
+  {drink: "Sparkling Water", price: 2},
+  {drink: "none", price: 0}
 ]
+
+YourPizza.prototype.totalCost = function() {
+  for (let i=0; i<sizes.length; i++) {
+    const theSize = sizes[i].size;
+    if (this.size === theSize){
+      console.log("true");
+    }
+  }
+}
