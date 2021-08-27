@@ -95,7 +95,7 @@ YourPizza.prototype.totalCost = function() {
 }
 
 $(document).ready(function() {
-  $("#orderNow").submit(function(event){
+  $("").submit(function(event){
     event.preventDefault();
     let yourPizza = new YourPizza(yourSize, yourSauce, yourDip);
     let yourCost = yourPizza.totalCost();
@@ -104,7 +104,7 @@ $(document).ready(function() {
     const yourDip = $("select#dip").val();
     const yourSide = $(".side:checked").val();
     const yourDrink = $(".drink:checked").val();
-    const yourTopping = $(".topping:checked").val();
+    const yourTopping = $("input:checkbox[name=topping]:checked").val();
     yourPizza.sides.push(yourSide);
     yourPizza.drinks.push(yourDrink);
     yourPizza.toppings.push(yourTopping);
