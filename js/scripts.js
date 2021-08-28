@@ -2,8 +2,6 @@ function YourPizza (urSize, urSauce, urDip){
   this.size = urSize;
   this.sauce = urSauce;
   this.dipping = urDip;
-  this.sides = [];
-  this.drinks = [];
   this.toppings = [];
 }
 
@@ -20,21 +18,6 @@ const sauces = [
   {sauce: "Pesto", price: 2}
 ]
 
-const toppings = [
-  {topping: "Pepperoni", price: 2},
-  {topping: "Sausage", price: 2},
-  {topping: "Canadian Bacon", price: 2},
-  {topping: "Anchovies", price: 2},
-  {topping: "Grilled Chicken", price: 2},
-  {topping: "Mushrooms", price: 1},
-  {topping: "Onion", price: 1},
-  {topping: "Black Olives", price: 1},
-  {topping: "Green Pepper", price: 1},
-  {topping: "Artichoke Hearts", price: 1},
-  {topping: "Pineapple", price: 1},
-  {topping: "Extra Cheese", price: 1}
-]
-
 const dippings = [
   {dipping: "Ranch", price: 1},
   {dipping: "Garlic Butter", price: 1},
@@ -42,20 +25,8 @@ const dippings = [
   {dipping: "Blue Cheese", price: 1}
 ]
 
-const sides = [
-  {side: "Cesar Salad", price: 3},
-  {side: "Garlic Bread", price: 3},
-  {side: "6 Hot Wings", price: 5}
-]
-
-const drinks = [
-  {drink: "Cola", price: 2},
-  {drink: "Lemon Lime Soda", price: 2},
-  {drink: "Orange Soda", price: 2}
-]
-
 YourPizza.prototype.totalCost = function() {
-  let cost = 0
+  let cost = 0;
   for (let i=0; i<sizes.length; i++) {
     if (this.size === sizes[i].size){
       cost += sizes[i].price;
@@ -71,23 +42,12 @@ YourPizza.prototype.totalCost = function() {
       cost += dippings[i].price;
     }
   }
-  let sideNum = this.sides.length;
-  let drinkNum = this.drinks.length;
-  let toppingsNum = this.toppings.length;
-  cost =+ (sideNum*5) + (drinkNum*2) + (toppingsNum*1);
+  if (this.toppings.length > 0) {
+    cost += this.toppings.length;
   }
-//   for (let i=0; i<drinks.length; i++) {
-//     if (this.drinks.includes(drinks[i].drink)){
-//       cost += drinks[i].price;
-//     }
-//   }
-//   for (let i=0; i<toppings.length; i++) {
-//     if (this.toppings.includes(toppings[i].topping)){
-//       cost += toppings[i].price;
-//     }
-//   }
-//   return cost;
-// }
+  return cost;
+  }
+
 
 $(document).ready(function() {
   $("#startOrder").on("click", function(event) {
@@ -102,31 +62,19 @@ $(document).ready(function() {
     const yourSize = $("select#size").val();
     const yourSauce= $("select#sauce").val();
     const yourDip = $("select#dip").val();
-    let yourSide = [];
-    let yourDrink = [];
-    let yourTopping = [];
+    const yourTopping = [];
 
     $("input:checkbox[name=toppings]:checked").each(function() {
       yourTopping.push($(this).val());
     });
-    $("input:checkbox[name=drink]:checked").each(function() {
-      yourDrink.push($(this).val());
-    });
-    $("input:checkbox[name=side]:checked").each(function() {
-      yourSide.push($(this).val());
-    });
 
     let yourPizza = new YourPizza(yourSize, yourSauce, yourDip);
-    yourPizza.sides.push(yourSide);
-    yourPizza.drinks.push(yourDrink);
     yourPizza.toppings.push(yourTopping);
     const yourCost = yourPizza.totalCost();
 
     $("#yourSize").append(yourPizza.size);
     $("#yourSauce").append(yourPizza.sauce);
     $("#yourToppings").append(yourPizza.toppings);
-    $("#yourSide").append(yourPizza.sides);
-    $("#yourDrink").append(yourPizza.drinks);
     $("#yourDip").append(yourPizza.dipping);
     $("#totalCost").append(yourCost);
 
