@@ -16,6 +16,8 @@ This project was created using Test Driven Development. The plain text tests can
 This application allows the user to make multiple selections using radio buttons to create their own pizza. When the user clicks the Order Now! button, the total cost of the custom pizza will display.
 This application was created as an independent project at Epicodus so showcase proper use of JavaScript Objects, Constructors, and Prototypes.
 
+During this project, I hit a wall with getting the toppings, drinks, and sides to add to the price. I ended up reworking the project, removing the drink and side options, and changing the function to use the array length instead of the values. Once I go the code to work with the array length, I realized I may have been able to use this.key[0].name to get the arrays to read properly the way I originally had the function set up. 
+
 ## Setup/Installation Requirements
 
 * Go to the [project repository](https://github.com/chynnalew/pizza)
@@ -27,7 +29,7 @@ This application was created as an independent project at Epicodus so showcase p
 
 ## Known Bugs
 
-*  The checkbox values are pushing to arrays, but are failing to add to the total, even though the function worked during testing.
+*  No known bugs.
 
 ## License
 
