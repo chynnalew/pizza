@@ -54,7 +54,6 @@ const drinks = [
   {drink: "Orange Soda", price: 2}
 ]
 
-
 YourPizza.prototype.totalCost = function() {
   let cost = 0
   for (let i=0; i<sizes.length; i++) {
@@ -72,23 +71,23 @@ YourPizza.prototype.totalCost = function() {
       cost += dippings[i].price;
     }
   }
-  for (let i=0; i<sides.length; i++) {
-    if (this.sides.includes(sides[i].side)) {
-      cost = cost + sides[i].price;
-    }
+  let sideNum = this.sides.length;
+  let drinkNum = this.drinks.length;
+  let toppingsNum = this.toppings.length;
+  cost =+ (sideNum*5) + (drinkNum*2) + (toppingsNum*1);
   }
-  for (let i=0; i<drinks.length; i++) {
-    if (this.drinks.includes(drinks[i].drink)){
-      cost += drinks[i].price;
-    }
-  }
-  for (let i=0; i<toppings.length; i++) {
-    if (this.toppings.includes(toppings[i].topping)){
-      cost += toppings[i].price;
-    }
-  }
-  return cost;
-}
+//   for (let i=0; i<drinks.length; i++) {
+//     if (this.drinks.includes(drinks[i].drink)){
+//       cost += drinks[i].price;
+//     }
+//   }
+//   for (let i=0; i<toppings.length; i++) {
+//     if (this.toppings.includes(toppings[i].topping)){
+//       cost += toppings[i].price;
+//     }
+//   }
+//   return cost;
+// }
 
 $(document).ready(function() {
   $("#startOrder").on("click", function(event) {
@@ -99,12 +98,13 @@ $(document).ready(function() {
 
   $("#pizza").submit(function(event){
     event.preventDefault();
+
     const yourSize = $("select#size").val();
     const yourSauce= $("select#sauce").val();
     const yourDip = $("select#dip").val();
-    const yourSide = [];
-    const yourDrink = [];
-    const yourTopping = [];
+    let yourSide = [];
+    let yourDrink = [];
+    let yourTopping = [];
 
     $("input:checkbox[name=toppings]:checked").each(function() {
       yourTopping.push($(this).val());
@@ -120,7 +120,7 @@ $(document).ready(function() {
     yourPizza.sides.push(yourSide);
     yourPizza.drinks.push(yourDrink);
     yourPizza.toppings.push(yourTopping);
-    let yourCost = yourPizza.totalCost();
+    const yourCost = yourPizza.totalCost();
 
     $("#yourSize").append(yourPizza.size);
     $("#yourSauce").append(yourPizza.sauce);
