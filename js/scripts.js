@@ -42,11 +42,12 @@ YourPizza.prototype.totalCost = function() {
       cost += dippings[i].price;
     }
   }
-  if (this.toppings.length > 0) {
-    cost += this.toppings.length;
+  if (this.toppings[0].length > 0){
+    cost += this.toppings[0].length;
   }
-  return cost;
+  return cost; 
   }
+  
 
 
 $(document).ready(function() {
@@ -62,7 +63,7 @@ $(document).ready(function() {
     const yourSize = $("select#size").val();
     const yourSauce= $("select#sauce").val();
     const yourDip = $("select#dip").val();
-    const yourTopping = [];
+    let yourTopping = [];
 
     $("input:checkbox[name=toppings]:checked").each(function() {
       yourTopping.push($(this).val());
